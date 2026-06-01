@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — Zirconia Supply PPK</title>
+  <meta name="description" content="Full Yucera zirconia disc product range with pricing. ST Multilayer, SHT, 4D PRO, 3D Plus, 3D Nature, Pro Master, ST/HT White." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #f8f4ef;
+      --cream: #f0ebe2;
+      --gold: #b89a5e;
+      --gold-light: #d4b87a;
+      --dark: #1a1a1a;
+      --mid: #3d3530;
+      --blue-zr: #4a7fa5;
+      --blue-light: #e8f2f9;
+      --text: #2c2520;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'DM Sans',sans-serif; background:var(--ivory); color:var(--text); overflow-x:hidden; }
+
+    nav {
+      position:fixed; top:0; width:100%; z-index:100;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:1.2rem 4rem;
+      background:rgba(248,244,239,0.95);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(184,154,94,0.2);
+    }
+    .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:700; color:var(--dark); }
+    .nav-logo span { color:var(--gold); }
+    .nav-links { display:flex; gap:2.5rem; list-style:none; }
+    .nav-links a { text-decoration:none; color:var(--mid); font-size:0.88rem; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--gold); }
+    .nav-cta { background:var(--gold); color:white; padding:0.6rem 1.8rem; font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:background 0.3s; }
+    .nav-cta:hover { background:var(--mid); }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 10rem 4rem 4rem;
+      background: linear-gradient(135deg, var(--dark) 0%, #2d2420 100%);
+      position: relative; overflow:hidden;
+    }
+    .page-header-bg {
+      position:absolute; inset:0; pointer-events:none;
+    }
+    .page-header span { font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-light); display:block; margin-bottom:0.8rem; }
+    .page-header h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.5rem,5vw,4rem); font-weight:300; color:white; line-height:1.1; }
+    .page-header p { color:rgba(255,255,255,0.5); font-size:1rem; margin-top:1rem; font-weight:300; max-width:520px; }
+
+    /* FILTER TABS */
+    .filter-bar {
+      position:sticky; top:72px; z-index:50;
+      background:white; border-bottom:1px solid rgba(184,154,94,0.15);
+      padding:0 4rem;
+      display:flex; gap:0; overflow-x:auto;
+    }
+    .filter-btn {
+      padding:1rem 1.5rem; font-size:0.8rem; letter-spacing:0.1em;
+      text-transform:uppercase; background:none; border:none;
+      border-bottom:2px solid transparent; cursor:pointer;
+      color:var(--mid); white-space:nowrap; transition:all 0.3s;
+    }
+    .filter-btn:hover { color:var(--gold); }
+    .filter-btn.active { color:var(--gold); border-bottom-color:var(--gold); }
+
+    /* PRODUCTS */
+    .products-section { padding:5rem 4rem; }
+
+    .product-block {
+      margin-bottom:5rem;
+      padding-bottom:5rem;
+      border-bottom:1px solid rgba(184,154,94,0.15);
+    }
+    .product-block:last-child { border-bottom:none; }
+
+    .product-layout {
+      display:grid; grid-template-columns:280px 1fr; gap:4rem; align-items:start;
+    }
+    .product-visual { position:sticky; top:140px; }
+    .product-visual img {
+      width:100%; aspect-ratio:1; object-fit:contain;
+      background:var(--cream); padding:2rem;
+      border:1px solid rgba(184,154,94,0.12);
+    }
+    .product-badge {
+      display:inline-block; margin-top:0.8rem;
+      padding:0.3rem 0.8rem; font-size:0.7rem; letter-spacing:0.12em;
+      text-transform:uppercase; background:var(--blue-light); color:var(--blue-zr);
+    }
+
+    .product-info h2 {
+      font-family:'Cormorant Garamond',serif; font-size:2.5rem;
+      font-weight:600; color:var(--dark); margin-bottom:0.4rem;
+    }
+    .product-info .tagline { color:var(--gold); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1.2rem; }
+    .product-info .desc { color:var(--mid); font-size:0.95rem; line-height:1.75; font-weight:300; margin-bottom:2rem; max-width:540px; }
+
+    /* SPECS GRID */
+    .specs-grid {
+      display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
+      gap:1px; background:rgba(184,154,94,0.15);
+      border:1px solid rgba(184,154,94,0.15);
+      margin-bottom:2rem;
+    }
+    .spec-cell {
+      background:white; padding:1rem;
+      display:flex; flex-direction:column; gap:0.2rem;
+    }
+    .spec-cell label { font-size:0.7rem; color:var(--mid); letter-spacing:0.1em; text-transform:uppercase; }
+    .spec-cell strong { font-size:0.95rem; color:var(--dark); font-weight:500; }
+
+    /* INDICATIONS */
+    .indications { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem; }
+    .ind-tag { font-size:0.75rem; padding:0.3rem 0.8rem; background:var(--cream); color:var(--mid); border:1px solid rgba(184,154,94,0.2); }
+
+    /* PRICE TABLE */
+    .price-table { width:100%; border-collapse:collapse; }
+    .price-table caption {
+      text-align:left; font-size:0.75rem; letter-spacing:0.15em;
+      text-transform:uppercase; color:var(--mid); padding-bottom:0.8rem;
+    }
+    .price-table th {
+      text-align:left; font-size:0.75rem; letter-spacing:0.1em;
+      text-transform:uppercase; color:var(--mid);
+      padding:0.7rem 1rem; background:var(--cream);
+      border-bottom:1px solid rgba(184,154,94,0.2);
+    }
+    .price-table td {
+      padding:0.75rem 1rem; font-size:0.9rem;
+      border-bottom:1px solid rgba(184,154,94,0.1);
+    }
+    .price-table tr:last-child td { border-bottom:none; }
+    .price-table tr:hover td { background:rgba(184,154,94,0.04); }
+    .price-col { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--gold); font-weight:600; }
+    .cta-row { padding-top:1.5rem; display:flex; gap:1rem; align-items:center; flex-wrap:wrap; }
+    .btn-quote {
+      background:var(--dark); color:white;
+      padding:0.75rem 2rem; text-decoration:none;
+      font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase;
+      transition:background 0.3s; border:none; cursor:pointer;
+    }
+    .btn-quote:hover { background:var(--gold); }
+    .min-note { font-size:0.78rem; color:var(--mid); }
+
+    /* COMPARISON TABLE */
+    .comparison-section { padding:0 4rem 5rem; }
+    .comparison-section h2 { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; margin-bottom:2rem; }
+    .comp-table { width:100%; border-collapse:collapse; overflow-x:auto; display:block; }
+    .comp-table th { background:var(--dark); color:white; padding:0.9rem 1rem; font-size:0.78rem; letter-spacing:0.08em; text-align:left; white-space:nowrap; }
+    .comp-table th:first-child { background:var(--dark); }
+    .comp-table td { padding:0.8rem 1rem; font-size:0.85rem; border-bottom:1px solid rgba(184,154,94,0.1); white-space:nowrap; }
+    .comp-table tr:hover td { background:rgba(184,154,94,0.04); }
+    .comp-table .product-col { font-weight:500; color:var(--dark); }
+    .comp-table .price-start { color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; }
+    .badge-best { background:var(--gold); color:white; font-size:0.65rem; padding:0.15rem 0.5rem; letter-spacing:0.08em; text-transform:uppercase; margin-left:0.5rem; }
+
+    @media(max-width:900px) {
+      .product-layout { grid-template-columns:1fr; }
+      .product-visual { position:static; }
+      nav { padding:1rem 1.5rem; }
+      .nav-links { display:none; }
+      .page-header { padding:8rem 1.5rem 3rem; }
+      .products-section, .comparison-section { padding:3rem 1.5rem; }
+      .filter-bar { padding:0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Zirconia <span>Supply</span> PPK</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Request Quote</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-bg">
+    <svg width="100%" height="100%" viewBox="0 0 1400 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="1200" cy="200" r="300" fill="none" stroke="rgba(184,154,94,0.08)" stroke-width="1"/>
+      <circle cx="1200" cy="200" r="260" fill="none" stroke="rgba(74,127,165,0.07)" stroke-width="1"/>
+      <circle cx="100" cy="350" r="150" fill="none" stroke="rgba(184,154,94,0.06)" stroke-width="1"/>
+      <polygon points="1100,50 1140,75 1140,125 1100,150 1060,125 1060,75" fill="none" stroke="rgba(184,154,94,0.15)" stroke-width="1"/>
+      <polygon points="300,100 325,115 325,145 300,160 275,145 275,115" fill="none" stroke="rgba(74,127,165,0.12)" stroke-width="1"/>
+    </svg>
+  </div>
+  <span>Yucera Certified · ISO 13485 · CE 1639 · FDA</span>
+  <h1>Product Range &amp;<br/>Pricing</h1>
+  <p>All discs are 98mm diameter. Prices in EUR per disc. Minimum order: 2 discs. Delivery across Europe.</p>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterAll(this)">All Products</button>
+  <button class="filter-btn" onclick="filterTag(this,'multilayer')">Multilayer</button>
+  <button class="filter-btn" onclick="filterTag(this,'implant')">Implant</button>
+  <button class="filter-btn" onclick="filterTag(this,'anterior')">Anterior</button>
+  <button class="filter-btn" onclick="filterTag(this,'white')">Monolithic White</button>
+  <button class="filter-btn" onclick="filterTag(this,'premium')">Premium</button>
+</div>
+
+<section class="products-section">
+
+  <!-- 1. ST MULTILAYER -->
+  <div class="product-block" id="st-multilayer" data-tags="multilayer anterior">
+    <div class="product-layout">
+      <div class="product-visual">
+        <img src="st-multilayer.jpg" alt="ST Multilayer"/>
+        <div class="product-badge">Multilayer · Gradient</div>
+      </div>
+      <div class="product-info">
+        <h2>ST Multilayer</h2>
+        <div class="tagline">Strength · Translucency Balance</div>
+        <p class="desc">The ST Multilayer offers a smooth gradient from high-strength cervical to high-translucency incisal zones. Ideal for crown and bridge work requiring both durability and natural aesthetics.</p>
+        <div class="specs-grid">
+          <div class="spec-cell"><label>Bending Strength</label><strong>1100 MPa</strong></div>
+          <div class="spec-cell"><label>Transmittance</label><strong>43%</strong></div>
+          <div class="spec-cell"><label>Sintered Density</label><strong>6.07±0.03 g/cm³</strong></div>
+          <div class="spec-cell"><label>Sintering Temp</label><strong>1530°C</strong></div>
+        </div>
+        <div class="indications">
+          <span class="ind-tag">Crown</span><span class="ind-tag">Onlay</span><span class="ind-tag">Inlay</span><span class="ind-tag">2–5 Unit Bridge</span><span class="ind-tag">Anterior</span>
+        </div>
+        <table class="price-table">
+          <caption>Pricing by Size (98mm diameter)</caption>
+          <thead><tr><th>Size (mm)</th><th>Thickness</th><th>Price (€)</th></tr></thead>
+          <tbody>
+            <tr><td>98×12</td><td>12 mm</td><td class="price-col">€87.00</td></tr>
+            <tr><td>98×14</td><td>14 mm</td><td class="price-col">€91.00</td></tr>
+            <tr><td>98×16</td><td>16 mm</td><td class="price-col">€95.00</td></tr>
+            <tr><td>98×18</td><td>18 mm</td><td class="price-col">€99.00</td></tr>
+            <tr><td>98×20</td><td>20 mm</td><td class="price-col">€103.00</td></tr>
+            <tr><td>98×22</td><td>22 mm</td><td class="price-col">€107.00</td></tr>
+            <tr><td>98×25</td><td>25 mm</td><td class="price-col">€115.50</td></tr>
+          </tbody>
+        </table>
+        <div class="cta-row">
+          <a href="contact.html" class="btn-quote">Order Now</a>
+          <span class="min-note">Min. 2 discs · EU delivery · Payment on request</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SHT MULTILAYER -->
+  <div class="product-block" id="sht-multilayer" data-tags="multilayer anterior">
+    <div class="product-layout">
+      <div class="product-visual">
+        <img src="sht-multilayer.jpg" alt="SHT Multilayer"/>
+        <div class="product-badge">Super High Translucency</div>
+      </div>
+      <div class="product-info">
+        <h2>SHT Multilayer</h2>
+        <div class="tagline">Super High Translucency · Premium Aesthetics</div>
+        <p class="desc">The SHT Multilayer pushes translucency to 46% while maintaining structural integrity. Perfect for complex anterior cases where lifelike light transmission is essential.</p>
+        <div class="specs-grid">
+          <div class="spec-cell"><label>Bending Strength</label><strong>900 MPa</strong></div>
+          <div class="spec-cell"><label>Transmittance</label><strong>46%</strong></div>
+          <div class="spec-cell"><label>Sintered Density</label><strong>6.07±0.03 g/cm³</strong></div>
+          <div class="spec-cell"><label>Sintering Temp</label><strong>1530°C</strong></div>
+        </div>
+        <div class="indications">
+          <span class="ind-tag">Crown</span><span class="ind-tag">Inlay</span><span class="ind-tag">Onlay</span><span class="ind-tag">2–5 Unit Bridge</span><span class="ind-tag">Anterior</span>
+        </div>
+        <table class="price-table">
+          <caption>Pricing by Size (98mm diameter)</caption>
+          <thead><tr><th>Size (mm)</th><th>Thickness</th><th>Price (€)</th></tr></thead>
+          <tbody>
+            <tr><td>98×12</td><td>12 mm</td><td class="price-col">€102.00</td></tr>
+            <tr><td>98×14</td><td>14 mm</td><td class="price-col">€108.50</td></tr>
+            <tr><td>98×16</td><td>16 mm</td><td class="price-col">€115.50</td></tr>
+            <tr><td>98×18</td><td>18 mm</td><td class="price-col">€122.00</td></tr>
+            <tr><td>98×20</td><td>20 mm</td><td class="price-col">€128.50</td></tr>
+            <tr><td>98×22</td><td>22 mm</td><td class="price-col">€135.50</td></tr>
+            <tr><td>98×25</td><td>25 mm</td><td class="price-col">€144.00</td></tr>
+          </tbody>
+        </table>
+        <div class="cta-row">
+          <a href="contact.html" class="btn-quote">Order Now</a>
+          <span class="min-note">Min. 2 discs · EU delivery · Payment on request</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 4D PRO -->
+  <div class="product-block" id="4d-pro" data-tags="multilayer implant premium anterior">
+    <div class="product-layout">
+      <div class="product-visual">
+        <img src="4D-pro.jpg" alt="4D PRO"/>
+        <div class="product-badge">4D Technology · Implant</div>
+      </div>
+      <div class="product-info">
+        <h2>4D PRO</h2>
+        <div class="tagline">4D Gradient · Full Arch · Implant-Supported</div>
+        <p class="desc">The 4D PRO features a four-dimensional gradient from 700 MPa translucent incisal to 1200 MPa strong cervical — the widest strength-aesthetics range in the lineup. Designed for full-arch implant cases and complex restorations.</p>
+        <div class="specs-grid">
+          <div class="spec-cell"><label>Bending Strength</label><strong>700–1200 MPa</strong></div>
+          <div class="spec-cell"><label>Transmittance</label><strong>43%–57%</strong></div>
+          <div class="spec-cell"><label>Hardness</label><strong>1200 HV</strong></div>
+          <div class="spec-cell"><label>Sintering Temp</label><strong>1500°C</strong></div>
+        </div>
+        <div class="indications">
+          <span class="ind-tag">Crown</span><span class="ind-tag">Implant</span><span class="ind-tag">14-Unit Bridge</span><span class="ind-tag">Anterior</span><span class="ind-tag">Posterior</span>
+        </div>
+        <table class="price-table">
+          <caption>Pricing by Size (98mm diameter)</caption>
+          <thead><tr><th>Size (mm)</th><th>Thickness</th><th>Price (€)</th></tr></thead>
+          <tbody>
+            <tr><td>98×12</td><td>12 mm</td><td class="price-col">€134.00</td></tr>
+            <tr><td>98×14</td><td>14 mm</td><td class="price-col">€144.00</td></tr>
+            <tr><td>98×16</td><td>16 mm</td><td class="price-col">€154.00</td></tr>
+            <tr><td>98×18</td><td>18 mm</td><td class="price-col">€164.00</td></tr>
+            <tr><td>98×20</td><td>20 mm</td><td class="price-col">€174.00</td></tr>
+            <tr><td>98×22</td><td>22 mm</td><td class="price-col">€184.00</td></tr>
+            <tr><td>98×25</td><td>25 mm</td><td class="price-col">€197.00</td></tr>
+          </tbody>
+        </table>
+        <div class="cta-row">
+          <a href="contact.html" class="btn-quote">Order Now</a>
+          <span class="min-note">Min. 2 discs · EU delivery · Payment on request</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 3D PLUS MULTILAYER -->
+  <div class="product-block" id="3d-plus" data-tags="multilayer implant anterior">
+    <div class="product-layout">
+      <div class="product-visual">
+        <img src="3D-plus.jpg" alt="3D Plus Multilayer"/>
+        <div class="product-badge">Ultra Strength · 3D Gradient</div>
+      </div>
+      <div class="product-info">
+        <h2>3D Plus Multilayer</h2>
+        <div class="tagline">Maximum Strength · 3D Colour Gradient</div>
+        <p class="desc">Combining 1200 MPa bending strength with a sophisticated 3D colour gradient, the 3D Plus Multilayer is the choice for implant-supported crowns and high-stress anterior cases.</p>
+        <div class="specs-grid">
+          <div class="spec-cell"><label>Bending Strength</label><strong>1200 MPa</strong></div>
+          <div class="spec-cell"><label>Hardness</label><strong>1200 HV</strong></div>
+          <div class="spec-cell"><label>Sintered Density</label><strong>6.07±0.03 g/cm³</strong></div>
+          <div class="spec-cell"><label>Sintering Temp</label><strong>1530°C</strong></div>
+        </div>
+        <div class="indications">
+          <span class="ind-tag">Crown</span><span class="ind-tag">Onlay</span><span class="ind-tag">Inlay</span><span class="ind-tag">Implant</span><span class="ind-tag">Anterior</span>
+        </div>
+        <table class="price-table">
+          <caption>Pricing by Size (98mm diameter)</caption>
+          <thead><tr><th>Size (mm)</th><th>Thickness</th><th>Price (€)</th></tr></thead>
+          <tbody>
+            <tr><td>98×12</td><td>12 mm</td><td class="price-col">€118.50</td></tr>
+            <tr><td>98×14</td><td>14 mm</td><td class="price-col">€125.50</td></tr>
+            <tr><td>98×16</td><td>16 mm</td><td class="price-col">€134.00</td></tr>
+            <tr><td>98×18</td><td>18 mm</td><td class="price-col">€142.00</td></tr>
+            <tr><td>98×20</td><td>20 mm</td><td class="price-col">€148.50</td></tr>
+            <tr><td>98×22</td><td>22 mm</td><td class="price-col">€155.50</td></tr>
+            <tr><td>98×25</td><td>25 mm</td><td class="price-col">€164.00</td></tr>
+          </tbody>
+        </table>
+        <div class="cta-row">
+          <a href="contact.html" class="btn-quote">Order Now</a>
+          <span class="min-note">Min. 2 discs · EU delivery · Payment on request</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 3D NATURE -->
+  <div class="product-block" id="3d-nature" data-tags="multilayer anterior premium">
+    <div class="product-layout">
+      <div class="product-visual">
+        <img src="3D-nature.jpg" alt="3D Nature"/>
+        <div class="product-badge">Highest Aesthetics · 57% Transmittance</div>
+      </div>
+      <div class="product-info">
+        <h2>3D Nature</h2>
+        <div class="tagline">Lifelike Aesthetics · Maximum Translucency</div>
+        <p class="desc">The 3D Nature reaches up to 57% transmittance — the most lifelike optical behaviour in the range. Formulated specifically for veneers, anterior restorations, and demanding multi-unit bridge cases where natural light play is non-negotiable.</p>
+        <div class="specs-grid">
+          <div class="spec-cell"><label>Bending Strength</label><strong>700–1050 MPa</strong></div>
+          <div class="spec-cell"><label>Transmittance</label><strong>46%–57%</strong></div>
+          <div class="spec-cell"><label>Sintered Density</label><strong>6.07±0.03 g/cm³</strong></div>
+          <div class="spec-cell"><label>Sintering Temp</label><strong>1500°C</strong></div>
+        </div>
+        <div class="indications">
+          <span class="ind-tag">Veneer</span><span class="ind-tag">Anterior</span><span class="ind-tag">Posterior</span><span class="ind-tag">Inlay</span><span class="ind-tag">Multi-unit Bridge</span>
+        </div>
+        <table class="price-table">
+          <caption>Pricing by Size (98mm diameter)</caption>
+          <thead><tr><th>Size (mm)</th><th>Thickness</th><th>Price (€)</th></tr></thead>
+          <tbody>
+            <tr><td>98×12</td><td>12 mm</td><td class="price-col">€114.00</td></tr>
+            <tr><td>98×14</td><td>14 mm</td><td class="price-col">€124.00</td></tr>
+            <tr><td>98×16</td><td>16 mm</td><td class="price-col">€134.00</td></tr>
+            <tr><td>98×18</td><td>18 mm</td><td class="price-col">€142.00</td></tr>
+            <tr><td>98×20</td><td>20 mm</td><td class="price-col">€148.50</td></tr>
+            <tr><td>98×22</td><td>22 mm</td><td class="price-col">€155.50</td></tr>
+            <tr><td>98×25</td><td>25 mm</td><td class="price-col">€164.00</td></tr>
+          </tbody>
+        </table>
+        <div class="cta-row">
+          <a href="contact.html" class="btn-quote">Order Now</a>
+          <span class="min-note">Min. 2 discs · EU delivery · Payment on request</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. PRO MASTER -->
+  <div class="product-block" id="pro-master" data-tags="premium implant anterior">
+    <div class="product-layout">
+      <div class="product-visual">
+        <img src="pro-master.jpg" alt="Pro Master"/>
+        <div class="product-badge">Premium · TOSOH · FDA</div>
+      </div>
+      <div class="product-info">
+        <h2>Pro Master <span style="font-size:1rem;color:var(--gold);font-family:'DM Sans',sans-serif;">Premium</span></h2>
+        <div class="tagline">Flagship · 100% TOSOH Zirconia · CE & FDA</div>
+        <p class="desc">The pinnacle of the Yucera range. Pro Master uses 100% TOSOH Japanese zirconia powder, CE0197, ISO 13485 and FDA certified. Strength up to 1200 MPa combined with up to 57% transmittance — for full-arch, implant, posterior and the most demanding anterior cases.</p>
+        <div class="specs-grid">
+          <div class="spec-cell"><label>Bending Strength</label><strong>800–1200 MPa</strong></div>
+          <div class="spec-cell"><label>Transmittance</label><strong>43%–57%</strong></div>
+          <div class="spec-cell"><label>Sintered Density</label><strong>6.07±0.03 g/cm³</strong></div>
+          <div class="spec-cell"><label>Sintering Temp</label><strong>1500°C</strong></div>
+        </div>
+        <div class="indications">
+          <span class="ind-tag">Crown</span><span class="ind-tag">Anterior</span><span class="ind-tag">14-Unit Bridge</span><span class="ind-tag">Posterior</span><span class="ind-tag">Implant</span>
+        </div>
+        <table class="price-table">
+          <caption>Pricing by Size (98mm diameter)</caption>
+          <thead><tr><th>Size (mm)</th><th>Thickness</th><th>Price (€)</th></tr></thead>
+          <tbody>
+            <tr><td>98×12</td><td>12 mm</td><td class="price-col">€144.00</td></tr>
+            <tr><td>98×14</td><td>14 mm</td><td class="price-col">€154.00</td></tr>
+            <tr><td>98×16</td><td>16 mm</td><td class="price-col">€164.00</td></tr>
+            <tr><td>98×18</td><td>18 mm</td><td class="price-col">€174.00</td></tr>
+            <tr><td>98×20</td><td>20 mm</td><td class="price-col">€184.00</td></tr>
+            <tr><td>98×22</td><td>22 mm</td><td class="price-col">€194.00</td></tr>
+            <tr><td>98×25</td><td>25 mm</td><td class="price-col">€207.00</td></tr>
+          </tbody>
+        </table>
+        <div class="cta-row">
+          <a href="contact.html" class="btn-quote">Order Now</a>
+          <span class="min-note">Min. 2 discs · EU delivery · Payment on request</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. ST/HT WHITE -->
+  <div class="product-block" id="st-ht-white" data-tags="white">
+    <div class="product-layout">
+      <div class="product-visual">
+        <img src="ht-white.jpg" alt="ST / HT White"/>
+        <div class="product-badge">Monolithic White · Value</div>
+      </div>
+      <div class="product-info">
+        <h2>ST / HT White</h2>
+        <div class="tagline">Monolithic · High Strength · Economical</div>
+        <p class="desc">The ST/HT White is the go-to monolithic disc for high-volume dental labs. 1200 MPa bending strength, 1200 HV hardness, and reliable sintering at 1530°C. Available in both ST (standard translucency) and HT (high translucency) white versions.</p>
+        <div class="specs-grid">
+          <div class="spec-cell"><label>Bending Strength</label><strong>1200 MPa</strong></div>
+          <div class="spec-cell"><label>Hardness</label><strong>1200 HV</strong></div>
+          <div class="spec-cell"><label>Sintered Density</label><strong>6.07±0.03 g/cm³</strong></div>
+          <div class="spec-cell"><label>Sintering Temp</label><strong>1530°C</strong></div>
+        </div>
+        <div class="indications">
+          <span class="ind-tag">Crown</span><span class="ind-tag">Onlay</span><span class="ind-tag">Inlay</span><span class="ind-tag">2–5 Unit Bridge</span><span class="ind-tag">Anterior</span>
+        </div>
+        <table class="price-table">
+          <caption>Pricing by Size (98mm diameter)</caption>
+          <thead><tr><th>Size (mm)</th><th>Thickness</th><th>Price (€)</th></tr></thead>
+          <tbody>
+            <tr><td>98×12</td><td>12 mm</td><td class="price-col">€64.00</td></tr>
+            <tr><td>98×14</td><td>14 mm</td><td class="price-col">€68.50</td></tr>
+            <tr><td>98×16</td><td>16 mm</td><td class="price-col">€75.50</td></tr>
+            <tr><td>98×18</td><td>18 mm</td><td class="price-col">€82.00</td></tr>
+            <tr><td>98×20</td><td>20 mm</td><td class="price-col">€88.50</td></tr>
+            <tr><td>98×22</td><td>22 mm</td><td class="price-col">€95.50</td></tr>
+            <tr><td>98×25</td><td>25 mm</td><td class="price-col">€104.00</td></tr>
+          </tbody>
+        </table>
+        <div class="cta-row">
+          <a href="contact.html" class="btn-quote">Order Now</a>
+          <span class="min-note">Min. 2 discs · EU delivery · Payment on request</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="comparison-section">
+  <span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.8rem;">Quick Compare</span>
+  <h2>All Products at a Glance</h2>
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Strength</th>
+        <th>Transmittance</th>
+        <th>Hardness</th>
+        <th>Sinter Temp</th>
+        <th>From (98×12)</th>
+        <th>Best For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="product-col">ST Multilayer</td><td>1100 MPa</td><td>43%</td><td>—</td><td>1530°C</td><td class="price-start">€87</td><td>Crown, Bridge</td></tr>
+      <tr><td class="product-col">SHT Multilayer</td><td>900 MPa</td><td>46%</td><td>—</td><td>1530°C</td><td class="price-start">€102</td><td>Anterior, Bridge</td></tr>
+      <tr><td class="product-col">4D PRO</td><td>700–1200 MPa</td><td>43–57%</td><td>1200 HV</td><td>1500°C</td><td class="price-start">€134</td><td>Full Arch, Implant</td></tr>
+      <tr><td class="product-col">3D Plus Multilayer</td><td>1200 MPa</td><td>—</td><td>1200 HV</td><td>1530°C</td><td class="price-start">€118.50</td><td>Implant, Anterior</td></tr>
+      <tr><td class="product-col">3D Nature</td><td>700–1050 MPa</td><td>46–57%</td><td>—</td><td>1500°C</td><td class="price-start">€114</td><td>Veneer, Aesthetic</td></tr>
+      <tr><td class="product-col">Pro Master <span class="badge-best">PREMIUM</span></td><td>800–1200 MPa</td><td>43–57%</td><td>—</td><td>1500°C</td><td class="price-start">€144</td><td>Full Range · TOSOH</td></tr>
+      <tr><td class="product-col">ST / HT White</td><td>1200 MPa</td><td>—</td><td>1200 HV</td><td>1530°C</td><td class="price-start">€64</td><td>Monolithic, Volume</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer style="background:#111;color:rgba(255,255,255,0.4);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+  <div style="font-family:'Cormorant Garamond',serif;color:white;font-size:1.1rem;">Zirconia <span style="color:var(--gold);">Supply</span> PPK</div>
+  <p style="font-size:0.8rem;">© 2025 Zirconia Supply PPK · Almaty, Kazakhstan · EU Delivery</p>
+  <nav style="display:flex;gap:1.5rem;">
+    <a href="index.html" style="color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;">Home</a>
+    <a href="products.html" style="color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;">Products</a>
+    <a href="contact.html" style="color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;">Contact</a>
+  </nav>
+</footer>
+
+<script>
+  function filterAll(btn) {
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-block').forEach(b=>b.style.display='');
+  }
+  function filterTag(btn, tag) {
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-block').forEach(b=>{
+      const tags = b.getAttribute('data-tags') || '';
+      b.style.display = tags.includes(tag) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>
