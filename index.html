@@ -61,8 +61,13 @@
       position: fixed; top: 0; width: 100%; z-index: 100;
       background: #1a1a1a;
       border-bottom: 2px solid rgba(184,154,94,0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 2rem;
     }
     .nav-top {
+      display: none;
       text-align: center;
       padding: 0.55rem 2rem;
       border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -87,8 +92,12 @@
     }
     .nav-top .nav-cta:hover { background: white; color: var(--dark) !important; }
     .nav-bottom {
-      text-align: center;
-      padding: 0.4rem 2rem;
+      text-align: left;
+      padding: 0;
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      width: 100%;
     }
     .nav-logo {
       display: inline-block;
@@ -97,7 +106,36 @@
       color: white; letter-spacing: 0.08em;
     }
     .nav-logo span { color: var(--gold); }
-    .nav-links { display: none; }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: auto;
+    }
+    .nav-links a {
+      display: inline-block;
+      text-decoration: none;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links .nav-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: white !important;
+      padding: 0.35rem 1.1rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .nav-links .nav-cta:hover {
+      background: white;
+      color: var(--dark) !important;
+    }
 
     /* HERO */
     .hero {
@@ -336,8 +374,10 @@
     .hero-btns { animation-delay: 0.55s; }
 
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
+      nav { flex-direction: column; padding: 1rem; }
+      .nav-bottom { flex-direction: column; width: 100%; gap: 1rem; }
+      .nav-links { margin-left: 0; flex-wrap: wrap; justify-content: center; }
+      .nav-top { display: block; }
       .hero-content { padding: 1.5rem; }
       .section { padding: 4rem 1.5rem; }
       .stats { padding: 1.5rem; flex-wrap: wrap; gap: 1.5rem; }
@@ -351,10 +391,8 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-bottom">
-    <div class="nav-logo">Zirconia <span>Supply</span> PPK</div>
-  </div>
-  <div class="nav-top">
+  <div class="nav-logo">Zirconia <span>Supply</span> PPK</div>
+  <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="products.html">Products</a>
     <a href="about.html">About</a>
