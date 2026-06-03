@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ & Product Guide — Zirconia Supply PPK</title>
+  <meta name="description" content="Frequently asked questions about ordering Yucera zirconia discs. Delivery, minimum order, shades, product selection guide."/>
+  <meta name="google-site-verification" content="-d7JUG5Y8nZT4lHd_PQIs2jnSjKTvfIoTDM-q8-z7tU"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory:#f8f4ef; --cream:#f0ebe2; --gold:#b89a5e; --gold-light:#d4b87a;
+      --dark:#1a1a1a; --mid:#3d3530; --blue-zr:#4a7fa5; --blue-light:#e8f2f9; --text:#2c2520;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--text);}
+
+    nav{position:fixed;top:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(248,244,239,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,154,94,0.2);}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--dark);}
+    .nav-logo span{color:var(--gold);}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--mid);font-size:0.88rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold);}
+    .nav-cta{background:var(--gold);color:white;padding:0.6rem 1.8rem;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:background 0.3s;}
+    .nav-cta:hover{background:var(--mid);}
+
+    .page-header{padding:10rem 4rem 4rem;background:var(--dark);position:relative;overflow:hidden;}
+    .page-header svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+    .page-header span{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:0.8rem;position:relative;z-index:1;}
+    .page-header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;color:white;position:relative;z-index:1;}
+    .page-header p{color:rgba(255,255,255,0.5);margin-top:1rem;font-weight:300;max-width:520px;position:relative;z-index:1;}
+
+    /* PRODUCT SELECTOR */
+    .selector-section{padding:5rem 4rem;background:white;border-bottom:1px solid rgba(184,154,94,0.15);}
+    .selector-section h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;margin-bottom:0.5rem;}
+    .selector-section>p{color:var(--mid);font-weight:300;margin-bottom:3rem;}
+
+    .quiz{max-width:700px;}
+    .quiz-step{display:none;}
+    .quiz-step.active{display:block;}
+    .quiz-q{font-size:1.1rem;font-weight:500;color:var(--dark);margin-bottom:1.5rem;}
+    .quiz-options{display:flex;flex-wrap:wrap;gap:0.8rem;margin-bottom:1rem;}
+    .quiz-btn{
+      padding:0.75rem 1.5rem;border:1px solid rgba(184,154,94,0.3);
+      background:white;font-family:'DM Sans',sans-serif;font-size:0.9rem;
+      color:var(--mid);cursor:pointer;transition:all 0.25s;
+    }
+    .quiz-btn:hover{border-color:var(--gold);color:var(--gold);}
+    .quiz-btn.selected{background:var(--dark);color:white;border-color:var(--dark);}
+    .quiz-progress{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-bottom:1.5rem;}
+
+    .result-box{
+      background:var(--cream);border-left:3px solid var(--gold);
+      padding:2rem;margin-top:1rem;display:none;
+    }
+    .result-box.show{display:block;}
+    .result-product{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--dark);font-weight:600;margin-bottom:0.5rem;}
+    .result-why{color:var(--mid);font-size:0.9rem;line-height:1.7;margin-bottom:1rem;}
+    .result-link{display:inline-block;background:var(--dark);color:white;padding:0.7rem 1.8rem;text-decoration:none;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;transition:background 0.3s;}
+    .result-link:hover{background:var(--gold);}
+    .restart-btn{background:none;border:1px solid var(--mid);color:var(--mid);padding:0.7rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;margin-left:0.8rem;transition:all 0.3s;}
+    .restart-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+    /* SHADES */
+    .shades-section{padding:5rem 4rem;background:var(--cream);}
+    .shades-section h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;margin-bottom:0.5rem;}
+    .shades-section>p{color:var(--mid);font-weight:300;margin-bottom:2.5rem;}
+    .shades-note{background:white;border-left:3px solid var(--gold);padding:1.2rem 1.5rem;margin-bottom:2rem;font-size:0.9rem;color:var(--mid);line-height:1.6;}
+    .shades-note strong{color:var(--dark);}
+    .shades-grid{display:flex;flex-wrap:wrap;gap:0.6rem;}
+    .shade-chip{
+      padding:0.5rem 1rem;font-size:0.85rem;font-weight:500;
+      border:1px solid rgba(184,154,94,0.2);background:white;
+      display:flex;align-items:center;gap:0.5rem;
+    }
+    .shade-dot{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,0.1);}
+
+    /* FAQ */
+    .faq-section{padding:5rem 4rem;}
+    .faq-section h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;margin-bottom:2.5rem;}
+    .faq-item{border-bottom:1px solid rgba(184,154,94,0.15);overflow:hidden;}
+    .faq-q{
+      width:100%;text-align:left;background:none;border:none;
+      padding:1.4rem 0;display:flex;justify-content:space-between;align-items:center;
+      font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;
+      color:var(--dark);cursor:pointer;transition:color 0.3s;
+    }
+    .faq-q:hover{color:var(--gold);}
+    .faq-icon{font-size:1.3rem;transition:transform 0.3s;color:var(--gold);flex-shrink:0;margin-left:1rem;}
+    .faq-a{
+      max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;
+      font-size:0.92rem;color:var(--mid);line-height:1.75;font-weight:300;
+    }
+    .faq-a.open{max-height:400px;padding-bottom:1.4rem;}
+    .faq-icon.open{transform:rotate(45deg);}
+
+    footer{background:#111;color:rgba(255,255,255,0.4);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    footer a{color:rgba(255,255,255,0.4);font-size:0.8rem;text-decoration:none;}
+    footer a:hover{color:var(--gold);}
+
+    @media(max-width:768px){
+      nav{padding:1rem 1.5rem;}
+      .nav-links{display:none;}
+      .page-header,.selector-section,.shades-section,.faq-section{padding:4rem 1.5rem;}
+      .page-header{padding-top:7rem;}
+      footer{padding:1.5rem;flex-direction:column;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Zirconia <span>Supply</span> PPK</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Request Quote</a>
+</nav>
+<a href="https://wa.me/77773562239" target="_blank" title="Chat on WhatsApp" style="position:fixed;bottom:2rem;right:2rem;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform 0.3s;text-decoration:none;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<div class="page-header">
+  <svg viewBox="0 0 1400 350" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <circle cx="1300" cy="175" r="250" fill="none" stroke="rgba(184,154,94,0.07)" stroke-width="1"/>
+    <circle cx="100" cy="300" r="150" fill="none" stroke="rgba(184,154,94,0.05)" stroke-width="1"/>
+    <polygon points="200,60 230,80 230,120 200,140 170,120 170,80" fill="none" stroke="rgba(184,154,94,0.12)" stroke-width="1"/>
+  </svg>
+  <span>Help & Guidance</span>
+  <h1>FAQ &amp;<br/>Product Guide</h1>
+  <p>Everything you need to know before ordering — plus a quick tool to help you choose the right disc.</p>
+</div>
+
+<!-- PRODUCT SELECTOR -->
+<section class="selector-section">
+  <span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.8rem;">Interactive Tool</span>
+  <h2>Which Disc Is Right for You?</h2>
+  <p>Answer 3 quick questions and we'll recommend the best product for your case.</p>
+
+  <div class="quiz">
+    <!-- Step 1 -->
+    <div class="quiz-step active" id="step1">
+      <div class="quiz-progress">Step 1 of 3</div>
+      <div class="quiz-q">Where is the restoration?</div>
+      <div class="quiz-options">
+        <button class="quiz-btn" onclick="pick('location','anterior',this)">🦷 Anterior (front teeth)</button>
+        <button class="quiz-btn" onclick="pick('location','posterior',this)">🦷 Posterior (back teeth)</button>
+        <button class="quiz-btn" onclick="pick('location','both',this)">🦷 Both / Full arch</button>
+      </div>
+    </div>
+    <!-- Step 2 -->
+    <div class="quiz-step" id="step2">
+      <div class="quiz-progress">Step 2 of 3</div>
+      <div class="quiz-q">What is the restoration type?</div>
+      <div class="quiz-options">
+        <button class="quiz-btn" onclick="pick('type','crown',this)">👑 Crown / Onlay / Inlay</button>
+        <button class="quiz-btn" onclick="pick('type','bridge',this)">🔗 Multi-unit Bridge</button>
+        <button class="quiz-btn" onclick="pick('type','implant',this)">🔩 Implant-supported</button>
+        <button class="quiz-btn" onclick="pick('type','veneer',this)">✨ Veneer</button>
+      </div>
+    </div>
+    <!-- Step 3 -->
+    <div class="quiz-step" id="step3">
+      <div class="quiz-progress">Step 3 of 3</div>
+      <div class="quiz-q">What matters most?</div>
+      <div class="quiz-options">
+        <button class="quiz-btn" onclick="pick('priority','aesthetics',this)">💎 Maximum aesthetics & translucency</button>
+        <button class="quiz-btn" onclick="pick('priority','strength',this)">💪 Maximum strength & durability</button>
+        <button class="quiz-btn" onclick="pick('priority','balance',this)">⚖️ Balance of both</button>
+        <button class="quiz-btn" onclick="pick('priority','value',this)">💰 Best value</button>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div class="result-box" id="result">
+      <div class="result-product" id="result-name"></div>
+      <div class="result-why" id="result-why"></div>
+      <a href="products.html" class="result-link">View Pricing →</a>
+      <button class="restart-btn" onclick="restart()">Start Over</button>
+    </div>
+  </div>
+</section>
+
+<!-- SHADES -->
+<section class="shades-section">
+  <span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.8rem;">Colour Options</span>
+  <h2>Available Shades</h2>
+  <p>All multilayer and coloured discs are available in the following Vita Classical shades. <strong>Shade does not affect the price</strong> — pricing is based on product type and disc size only.</p>
+
+  <div class="shades-note">
+    <strong>How to order a specific shade:</strong> Simply mention the shade code in your message or order form. For example: "3D Plus Multilayer 98×14 — shade A2". Same price as any other shade for that product and size.
+  </div>
+
+  <div style="margin-bottom:1.5rem;">
+    <div style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:0.8rem;">A Series</div>
+    <div class="shades-grid">
+      <div class="shade-chip"><div class="shade-dot" style="background:#f5e6c8;"></div>A1</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#f0ddb0;"></div>A2</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#e8cf90;"></div>A3</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#e2c47a;"></div>A3.5</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#d9b660;"></div>A4</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1.5rem;">
+    <div style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:0.8rem;">B Series</div>
+    <div class="shades-grid">
+      <div class="shade-chip"><div class="shade-dot" style="background:#f6e8c0;"></div>B1</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#f0dfa8;"></div>B2</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#e8d090;"></div>B3</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#dfc078;"></div>B4</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1.5rem;">
+    <div style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:0.8rem;">C Series</div>
+    <div class="shades-grid">
+      <div class="shade-chip"><div class="shade-dot" style="background:#e8d8a8;"></div>C1</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#dfc890;"></div>C2</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#d4b878;"></div>C3</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#c8a860;"></div>C4</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1.5rem;">
+    <div style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:0.8rem;">D Series</div>
+    <div class="shades-grid">
+      <div class="shade-chip"><div class="shade-dot" style="background:#f0dfc0;"></div>D2</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#e8cfa0;"></div>D3</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#dfc088;"></div>D4</div>
+    </div>
+  </div>
+  <div>
+    <div style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:0.8rem;">BL (Bleach) Series</div>
+    <div class="shades-grid">
+      <div class="shade-chip"><div class="shade-dot" style="background:#faf5e8;"></div>BL1</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#f8f0e0;"></div>BL2</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#f5ecd8;"></div>BL3</div>
+      <div class="shade-chip"><div class="shade-dot" style="background:#f0e8d0;"></div>BL4</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.8rem;">Questions & Answers</span>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      What is the minimum order? <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">The minimum order is <strong>2 discs</strong>. You can mix products and sizes freely — for example, 1× ST Multilayer 98×14 and 1× 4D PRO 98×16 counts as 2 discs.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      How long does delivery to Europe take? <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">Delivery times vary by country and shipping method. Typically <strong>7–14 business days</strong> for most European countries. Express options may be available — contact us to discuss your timeline.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      Which zirconia is best for implant-supported restorations? <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">For implant cases we recommend the <strong>4D PRO</strong> or <strong>3D Plus Multilayer</strong>. The 4D PRO offers the widest strength gradient (700–1200 MPa) and is specifically designed for full-arch implant work. The 3D Plus delivers maximum 1200 MPa throughout, ideal for high-stress implant crowns.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      Are coloured (shaded) discs available? Does shade affect price? <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">Yes — all multilayer discs are available in the full Vita Classical shade range (A1–A4, B1–B4, C1–C4, D2–D4, BL1–BL4). <strong>Shade does not affect the price.</strong> You pay the same price for any shade of a given product and size. ST/HT White discs are available in white only.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      What payment methods do you accept? <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">Payment terms are discussed individually per order. We work with bank transfer and other options. Contact us via WhatsApp or email to discuss what works best for you.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      What is the difference between ST and HT discs? <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a"><strong>ST (Standard Translucency)</strong> discs have higher strength and are suited for posterior restorations and bridges where durability is the priority. <strong>HT (High Translucency)</strong> discs have greater light transmission, making them better suited for anterior restorations where aesthetics matter most. Both are available in the White monolithic version.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      What sintering temperature do Yucera discs require? <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">Most Yucera discs sinter at <strong>1530°C</strong> (ST Multilayer, SHT Multilayer, 3D Plus, ST/HT White). The 4D PRO, 3D Nature, and Pro Master sinter at <strong>1500°C</strong>. Always check the product spec before sintering.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      Can I order multiple different products in one order? <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">Absolutely. You can mix any products and sizes in a single order — just list everything you need when you contact us. The only requirement is a minimum of 2 discs total.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      How do I place an order? <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">The easiest way is via <strong>WhatsApp (+7 777 356 22 39)</strong> — just send a message with the product name, size, quantity, shade (if applicable), and your delivery country. You can also use the enquiry form on our <a href="contact.html" style="color:var(--gold);">Contact page</a>. We'll confirm availability and pricing within 24 hours.</div>
+  </div>
+
+</section>
+
+<footer>
+  <div style="font-family:'Cormorant Garamond',serif;color:white;font-size:1.1rem;">Zirconia <span style="color:var(--gold);">Supply</span> PPK</div>
+  <p style="font-size:0.8rem;">© 2026 Zirconia Supply PPK · Almaty, Kazakhstan · EU Delivery</p>
+  <nav style="display:flex;gap:1.5rem;">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</footer>
+
+<script>
+  const answers = {};
+
+  function pick(key, value, btn) {
+    answers[key] = value;
+    // highlight selected
+    btn.closest('.quiz-options').querySelectorAll('.quiz-btn').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected');
+
+    const steps = ['location','type','priority'];
+    const idx = steps.indexOf(key);
+    if (idx < 2) {
+      setTimeout(() => {
+        document.getElementById('step'+(idx+1)).classList.remove('active');
+        document.getElementById('step'+(idx+2)).classList.add('active');
+      }, 300);
+    } else {
+      setTimeout(() => showResult(), 300);
+    }
+  }
+
+  function showResult() {
+    const {location, type, priority} = answers;
+    let name, why;
+
+    if (type === 'veneer' || (location === 'anterior' && priority === 'aesthetics')) {
+      name = '3D Nature';
+      why = 'With transmittance up to 57%, the 3D Nature delivers the most lifelike optical properties in the range — perfect for veneers and high-aesthetic anterior cases.';
+    } else if (type === 'implant' || location === 'both') {
+      if (priority === 'strength') {
+        name = '3D Plus Multilayer';
+        why = 'Maximum 1200 MPa bending strength makes the 3D Plus ideal for high-stress implant crowns and full-arch cases where durability is non-negotiable.';
+      } else {
+        name = '4D PRO';
+        why = 'The 4D PRO\'s four-dimensional gradient (700–1200 MPa, 43–57% translucency) is engineered specifically for implant and full-arch cases — combining strength at the cervical with aesthetics at the incisal.';
+      }
+    } else if (priority === 'value') {
+      name = 'ST / HT White';
+      why = 'The most economical option in the range at €64 from 98×12mm. 1200 MPa strength and reliable sintering — the workhorse for high-volume labs.';
+    } else if (priority === 'strength' && type === 'bridge') {
+      name = 'ST Multilayer';
+      why = 'At 1100 MPa with a smooth gradient, the ST Multilayer is the reliable choice for multi-unit bridges where structural integrity comes first.';
+    } else if (priority === 'aesthetics' && location === 'anterior') {
+      name = 'SHT Multilayer';
+      why = '46% transmittance with a smooth gradient makes the SHT the go-to for anterior crowns and bridges where natural aesthetics are essential.';
+    } else if (priority === 'balance') {
+      name = 'Pro Master';
+      why = 'Made from 100% TOSOH zirconia, the Pro Master covers the full range — 800–1200 MPa strength and 43–57% translucency — making it suitable for virtually any indication.';
+    } else {
+      name = '3D Plus Multilayer';
+      why = 'With 1200 MPa strength and a natural 3D gradient, the 3D Plus Multilayer is a versatile all-rounder for crowns, implants, and anterior cases.';
+    }
+
+    document.getElementById('result-name').textContent = 'Our recommendation: ' + name;
+    document.getElementById('result-why').textContent = why;
+    document.getElementById('result').classList.add('show');
+    document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+  }
+
+  function restart() {
+    Object.keys(answers).forEach(k=>delete answers[k]);
+    document.getElementById('result').classList.remove('show');
+    document.querySelectorAll('.quiz-step').forEach(s=>s.classList.remove('active'));
+    document.getElementById('step1').classList.add('active');
+    document.querySelectorAll('.quiz-btn').forEach(b=>b.classList.remove('selected'));
+  }
+
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const icon = btn.querySelector('.faq-icon');
+    const isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'));
+    document.querySelectorAll('.faq-icon').forEach(i=>i.classList.remove('open'));
+    if (!isOpen) {
+      answer.classList.add('open');
+      icon.classList.add('open');
+    }
+  }
+</script>
+</body>
+</html>
