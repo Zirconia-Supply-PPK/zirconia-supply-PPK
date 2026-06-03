@@ -59,42 +59,42 @@
     /* NAV */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      display: flex; flex-direction: column;
       background: #1a1a1a;
       border-bottom: 2px solid rgba(184,154,94,0.4);
     }
     .nav-top {
-      display: flex; flex-direction: row;
-      justify-content: center; align-items: center;
+      text-align: center;
       padding: 0.55rem 2rem;
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      flex-wrap: nowrap;
+      white-space: nowrap;
+      overflow: hidden;
     }
     .nav-top a {
+      display: inline-block;
       text-decoration: none; color: rgba(255,255,255,0.75);
       font-size: 0.75rem; letter-spacing: 0.12em;
       text-transform: uppercase; transition: color 0.3s;
-      white-space: nowrap; margin: 0 1.2rem;
+      margin: 0 1.5rem;
     }
     .nav-top a:hover { color: var(--gold); }
     .nav-top .nav-cta {
+      display: inline-block;
       background: var(--gold); color: white !important;
-      padding: 0.35rem 1.1rem; margin: 0 0 0 1.2rem;
+      padding: 0.35rem 1.1rem; margin: 0 0 0 1rem;
       font-size: 0.72rem; letter-spacing: 0.08em;
       text-transform: uppercase; text-decoration: none;
-      transition: background 0.3s; display: inline-block;
+      transition: background 0.3s;
     }
     .nav-top .nav-cta:hover { background: white; color: var(--dark) !important; }
     .nav-bottom {
-      display: flex; flex-direction: row;
-      justify-content: center; align-items: center;
+      text-align: center;
       padding: 0.4rem 2rem;
     }
     .nav-logo {
+      display: inline-block;
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.2rem; font-weight: 600;
       color: white; letter-spacing: 0.08em;
-      white-space: nowrap; display: inline-block;
     }
     .nav-logo span { color: var(--gold); }
     .nav-links { display: none; }
