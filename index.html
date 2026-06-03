@@ -63,7 +63,11 @@
       border-bottom: 2px solid rgba(184,154,94,0.4);
     }
     .nav-top {
-      display: none;
+      text-align: center;
+      padding: 0.55rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      white-space: nowrap;
+      overflow: hidden;
     }
     .nav-top a {
       display: inline-block;
@@ -268,180 +272,354 @@
       border: 1px solid rgba(255,255,255,0.07);
       transition: border-color 0.3s;
     }
-    .why-card:hover { border-color: rgba(184,154,94,0.3); }
+    .why-card:hover { border-color: rgba(184,154,94,0.4); }
+    .why-icon { font-size: 2rem; margin-bottom: 1rem; }
     .why-card h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem; font-weight: 600;
-      color: white; margin-bottom: 0.8rem;
+      font-size: 1.2rem; color: white; margin-bottom: 0.6rem;
     }
-    .why-card p { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+    .why-card p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+    /* CTA SECTION */
+    .cta-section {
+      padding: 6rem 4rem; text-align: center;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--ivory) 100%);
+      position: relative; overflow: hidden;
+    }
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300; margin-bottom: 1rem;
+    }
+    .cta-section p { color: var(--mid); margin-bottom: 2.5rem; font-weight: 300; }
+    .cta-info {
+      display: flex; justify-content: center; gap: 3rem;
+      flex-wrap: wrap; margin-top: 3rem;
+      padding-top: 3rem; border-top: 1px solid rgba(184,154,94,0.2);
+    }
+    .cta-item { text-align: center; }
+    .cta-item a { color: var(--gold); text-decoration: none; font-size: 1rem; display: block; margin-bottom: 0.3rem; }
+    .cta-item span { font-size: 0.75rem; color: var(--mid); letter-spacing: 0.1em; text-transform: uppercase; }
 
     /* FOOTER */
     footer {
-      background: #0f0f0f; padding: 3rem 4rem;
-      text-align: center; border-top: 1px solid rgba(255,255,255,0.08);
+      background: #111; color: rgba(255,255,255,0.4);
+      padding: 2rem 4rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
     }
-    footer p { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
-    footer a { color: var(--gold); text-decoration: none; transition: color 0.3s; }
-    footer a:hover { color: white; }
+    footer .logo { font-family: 'Cormorant Garamond', serif; color: white; font-size: 1.1rem; }
+    footer .logo span { color: var(--gold); }
+    footer p { font-size: 0.8rem; }
+    footer nav { gap: 1.5rem; }
+    footer a { color: rgba(255,255,255,0.4); font-size: 0.8rem; text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    /* BG DECO */
+    .bg-circles {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0;
+    }
+    .circle {
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(184,154,94,0.1);
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity:0; transform: translateY(30px); }
+      to { opacity:1; transform: translateY(0); }
+    }
+    .hero-content > * { animation: fadeUp 0.8s ease both; }
+    .hero-tag { animation-delay: 0.1s; }
+    .hero h1 { animation-delay: 0.25s; }
+    .hero p { animation-delay: 0.4s; }
+    .hero-btns { animation-delay: 0.55s; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero-content { padding: 1.5rem; }
+      .section { padding: 4rem 1.5rem; }
+      .stats { padding: 1.5rem; flex-wrap: wrap; gap: 1.5rem; }
+      .stat { border-right: none; }
+      .why-section, .cta-section { padding: 4rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+    }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-bottom">
-      <div class="nav-logo">Zirconia Supply <span>PPK</span></div>
+<!-- NAV -->
+<nav>
+  <div class="nav-top">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Request Quote</a>
+  </div>
+  <div class="nav-bottom">
+    <div class="nav-logo">Zirconia <span>Supply</span> PPK</div>
+  </div>
+</nav>
+
+<a href="https://wa.me/77773562239" target="_blank" title="Chat on WhatsApp" style="position:fixed;bottom:2rem;right:2rem;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform 0.3s,box-shadow 0.3s;text-decoration:none;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <!-- Decorative SVG background -->
+  <div class="hero-decor">
+    <svg viewBox="0 0 700 800" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+      <!-- Large disc -->
+      <circle cx="520" cy="300" r="220" fill="none" stroke="rgba(184,154,94,0.12)" stroke-width="1.5"/>
+      <circle cx="520" cy="300" r="200" fill="rgba(74,127,165,0.04)" stroke="rgba(74,127,165,0.1)" stroke-width="1"/>
+      <!-- Disc label lines -->
+      <line x1="340" y1="290" x2="500" y2="290" stroke="rgba(184,154,94,0.15)" stroke-width="1"/>
+      <line x1="340" y1="310" x2="490" y2="310" stroke="rgba(184,154,94,0.1)" stroke-width="1"/>
+      <!-- Small disc bottom -->
+      <circle cx="200" cy="680" r="130" fill="none" stroke="rgba(184,154,94,0.08)" stroke-width="1"/>
+      <circle cx="200" cy="680" r="118" fill="rgba(74,127,165,0.03)" stroke="rgba(74,127,165,0.07)" stroke-width="1"/>
+      <!-- Tooth shape 1 (molar) -->
+      <g transform="translate(580,520) scale(0.7)" opacity="0.18">
+        <path d="M40,0 C60,-5 90,0 100,20 C115,45 110,80 100,100 C90,120 70,140 60,160 C55,175 55,195 60,210 L40,210 C45,195 45,175 40,160 C30,140 10,120 0,100 C-10,80 -15,45 0,20 C10,0 20,-5 40,0 Z" fill="rgba(184,154,94,0.6)" />
+        <ellipse cx="40" cy="15" rx="18" ry="8" fill="rgba(255,255,255,0.3)"/>
+      </g>
+      <!-- Tooth shape 2 (incisor) -->
+      <g transform="translate(420,540) scale(0.5)" opacity="0.15">
+        <path d="M20,0 C35,-3 60,0 65,15 C72,35 68,65 60,85 C52,105 40,130 35,155 L15,155 C10,130 -2,105 -10,85 C-18,65 -22,35 -15,15 C-10,0 5,-3 20,0 Z" fill="rgba(74,127,165,0.7)"/>
+      </g>
+      <!-- Hexagon crystal -->
+      <polygon points="520,100 555,120 555,160 520,180 485,160 485,120" fill="rgba(184,154,94,0.07)" stroke="rgba(184,154,94,0.2)" stroke-width="1"/>
+      <polygon points="620,450 645,465 645,495 620,510 595,495 595,465" fill="rgba(74,127,165,0.06)" stroke="rgba(74,127,165,0.15)" stroke-width="1"/>
+      <!-- Small dots -->
+      <circle cx="320" cy="150" r="3" fill="rgba(184,154,94,0.3)"/>
+      <circle cx="680" cy="200" r="4" fill="rgba(74,127,165,0.25)"/>
+      <circle cx="450" cy="700" r="5" fill="rgba(184,154,94,0.2)"/>
+      <circle cx="350" cy="500" r="2" fill="rgba(74,127,165,0.3)"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag">Yucera Zirconia · EU Delivery</div>
+    <h1>Precision<br/><em>Zirconia</em><br/>for Dental Labs</h1>
+    <p>Premium Yucera zirconia discs delivered across Europe. From translucent multilayers to ultra-strong monolithics — every disc backed by ISO-certified quality.</p>
+    <div class="hero-btns">
+      <a href="products.html" class="btn-primary">View All Products</a>
+      <a href="contact.html" class="btn-outline">Get a Quote</a>
     </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <span class="stat-n">7</span>
+    <span class="stat-l">Product Lines</span>
+  </div>
+  <div class="stat">
+    <span class="stat-n">7</span>
+    <span class="stat-l">Size Options</span>
+  </div>
+  <div class="stat">
+    <span class="stat-n">1200</span>
+    <span class="stat-l">MPa Max Strength</span>
+  </div>
+  <div class="stat">
+    <span class="stat-n">EU</span>
+    <span class="stat-l">Delivery Zone</span>
+  </div>
+  <div class="stat">
+    <span class="stat-n">2+</span>
+    <span class="stat-l">Min. Order (discs)</span>
+  </div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-tag">Our Range</span>
+    <h2>Yucera Zirconia Collection</h2>
+    <p class="section-sub">All discs are 98mm diameter. Available in 12–25mm thicknesses. ISO & CE certified.</p>
+  </div>
+  <div class="products-grid">
+
+    <div class="product-card">
+      <img src="st-multilayer.jpg" alt="ST Multilayer" class="product-img"/>
+      <div class="product-name">ST Multilayer</div>
+      <div class="product-tag">Crown · Bridge · Anterior</div>
+      <div class="product-desc">Smooth strength-to-translucency gradient. Ideal for natural-looking anterior and posterior bridges.</div>
+      <div class="product-specs">
+        <div class="spec"><strong>1100 MPa</strong>Bending Strength</div>
+        <div class="spec"><strong>43%</strong>Transmittance</div>
+      </div>
+      <div class="product-price">From €87.00 <span>/ disc (98×12mm)</span></div>
+      <a href="products.html#st-multilayer" class="card-link">See all sizes →</a>
+    </div>
+
+    <div class="product-card">
+      <img src="sht-multilayer.jpg" alt="SHT Multilayer" class="product-img"/>
+      <div class="product-name">SHT Multilayer</div>
+      <div class="product-tag">Crown · Bridge · Anterior</div>
+      <div class="product-desc">Super high translucency multilayer with exceptional aesthetics for complex restorations.</div>
+      <div class="product-specs">
+        <div class="spec"><strong>900 MPa</strong>Bending Strength</div>
+        <div class="spec"><strong>46%</strong>Transmittance</div>
+      </div>
+      <div class="product-price">From €102.00 <span>/ disc (98×12mm)</span></div>
+      <a href="products.html#sht-multilayer" class="card-link">See all sizes →</a>
+    </div>
+
+    <div class="product-card">
+      <img src="4D-pro.jpg" alt="4D PRO" class="product-img"/>
+      <div class="product-name">4D PRO</div>
+      <div class="product-tag">Crown · Implant · Full Arch</div>
+      <div class="product-desc">Next-generation 4D multilayer with widest translucency gradient for full-arch implant cases.</div>
+      <div class="product-specs">
+        <div class="spec"><strong>700–1200 MPa</strong>Strength</div>
+        <div class="spec"><strong>43–57%</strong>Transmittance</div>
+      </div>
+      <div class="product-price">From €134.00 <span>/ disc (98×12mm)</span></div>
+      <a href="products.html#4d-pro" class="card-link">See all sizes →</a>
+    </div>
+
+    <div class="product-card">
+      <img src="3D-plus.jpg" alt="3D Plus Multilayer" class="product-img"/>
+      <div class="product-name">3D Plus Multilayer</div>
+      <div class="product-tag">Crown · Implant · Anterior</div>
+      <div class="product-desc">Ultra-strong 3D gradient disc combining 1200 MPa strength with excellent translucency.</div>
+      <div class="product-specs">
+        <div class="spec"><strong>1200 MPa</strong>Bending Strength</div>
+        <div class="spec"><strong>1200 HV</strong>Hardness</div>
+      </div>
+      <div class="product-price">From €118.50 <span>/ disc (98×12mm)</span></div>
+      <a href="products.html#3d-plus" class="card-link">See all sizes →</a>
+    </div>
+
+    <div class="product-card">
+      <img src="3D-nature.jpg" alt="3D Nature" class="product-img"/>
+      <div class="product-name">3D Nature</div>
+      <div class="product-tag">Veneer · Anterior · Multi-unit</div>
+      <div class="product-desc">Highest translucency range up to 57%. Designed for premium aesthetic veneers and anterior cases.</div>
+      <div class="product-specs">
+        <div class="spec"><strong>700–1050 MPa</strong>Strength</div>
+        <div class="spec"><strong>46–57%</strong>Transmittance</div>
+      </div>
+      <div class="product-price">From €114.00 <span>/ disc (98×12mm)</span></div>
+      <a href="products.html#3d-nature" class="card-link">See all sizes →</a>
+    </div>
+
+    <div class="product-card">
+      <img src="pro-master.jpg" alt="Pro Master" class="product-img"/>
+      <div class="product-name">Pro Master</div>
+      <div class="product-tag">Premium · Full Arch · Implant</div>
+      <div class="product-desc">The flagship premium disc. Full arch, implant, posterior — 100% TOSOH zirconia with CE & FDA certification.</div>
+      <div class="product-specs">
+        <div class="spec"><strong>800–1200 MPa</strong>Strength</div>
+        <div class="spec"><strong>43–57%</strong>Transmittance</div>
+      </div>
+      <div class="product-price">From €144.00 <span>/ disc (98×12mm)</span></div>
+      <a href="products.html#pro-master" class="card-link">See all sizes →</a>
+    </div>
+
+    <div class="product-card">
+      <img src="st-white.jpg" alt="ST/HT White" class="product-img"/>
+      <div class="product-name">ST / HT White</div>
+      <div class="product-tag">Crown · Bridge · Monolithic</div>
+      <div class="product-desc">Economical monolithic white disc with exceptional strength. The workhorse for high-volume labs.</div>
+      <div class="product-specs">
+        <div class="spec"><strong>1200 MPa</strong>Bending Strength</div>
+        <div class="spec"><strong>1200 HV</strong>Hardness</div>
+      </div>
+      <div class="product-price">From €64.00 <span>/ disc (98×12mm)</span></div>
+      <a href="products.html#st-ht-white" class="card-link">See all sizes →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="section-tag">Why Choose Us</div>
+  <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:white; margin-top:0.5rem;">Built for Dental Professionals</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🏅</div>
+      <h3>Yucera Products</h3>
+      <p>We supply Yucera discs — ISO 13485, CE 1639, and FDA registered products. Consistent quality, every order.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🚚</div>
+      <h3>Europe-Wide Delivery</h3>
+      <p>Reliable shipping to all EU countries. Flexible logistics with tracking provided on every shipment.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📦</div>
+      <h3>Low Minimum Order</h3>
+      <p>Order from just 2 discs. No huge upfront commitment — perfect for small labs and large operations alike.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💬</div>
+      <h3>Personal Service</h3>
+      <p>Direct contact via WhatsApp or email. Quick responses, flexible payment terms negotiated individually.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔬</div>
+      <h3>Full Spec Transparency</h3>
+      <p>Every product listed with exact MPa strength, transmittance %, sintering temp, and density specs.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💎</div>
+      <h3>7 Product Lines</h3>
+      <p>From entry-level white monolithics to premium 4D multilayers — one supplier for your entire lab.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="bg-circles">
+    <div class="circle" style="width:400px;height:400px;top:-100px;right:-100px;"></div>
+    <div class="circle" style="width:200px;height:200px;bottom:50px;left:100px;"></div>
+  </div>
+  <div style="position:relative;z-index:1;">
+    <span class="section-tag">Get Started</span>
+    <h2>Ready to Order?</h2>
+    <p>Contact us directly to discuss your requirements, pricing, and delivery options.</p>
+    <div>
+      <a href="contact.html" class="btn-primary">Contact Us</a>
+    </div>
+    <div class="cta-info">
+      <div class="cta-item">
+        <a href="https://wa.me/77773562239">+7 777 356 22 39</a>
+        <span>WhatsApp</span>
+      </div>
+      <div class="cta-item">
+        <a href="mailto:zirpapeka@gmail.com">zirpapeka@gmail.com</a>
+        <span>Email</span>
+      </div>
+      <div class="cta-item">
+        <a href="#">Almaty, Kazakhstan</a>
+        <span>Location · EU Delivery</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Zirconia <span>Supply</span> PPK</div>
+  <p>© 2025 Zirconia Supply PPK · Almaty, Kazakhstan · EU Delivery</p>
+  <nav style="display:flex; gap:1.5rem;">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
   </nav>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <span class="hero-tag">Premium Zirconia</span>
-      <h1>Dental Excellence <em>Refined</em></h1>
-      <p>European standard zirconia discs for the most discerning laboratories. Premium Yucera products delivered across Europe from Almaty.</p>
-      <div class="hero-btns">
-        <a href="#products" class="btn-primary">Explore Products</a>
-        <a href="#contact" class="btn-outline">Get in Touch</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="stats">
-    <div class="stat">
-      <span class="stat-n">15+</span>
-      <span class="stat-l">Years Experience</span>
-    </div>
-    <div class="stat">
-      <span class="stat-n">1000+</span>
-      <span class="stat-l">Labs Served</span>
-    </div>
-    <div class="stat">
-      <span class="stat-n">50+</span>
-      <span class="stat-l">Countries</span>
-    </div>
-  </section>
-
-  <!-- PRODUCTS SECTION -->
-  <section class="section" id="products">
-    <div class="section-header">
-      <span class="section-tag">Our Collection</span>
-      <h2>Premium Zirconia Discs</h2>
-      <p class="section-sub">Each disc is engineered for precision, durability, and aesthetic excellence. Choose from our range of specialized formulations.</p>
-    </div>
-    <div class="products-grid">
-      <!-- Product 1 -->
-      <div class="product-card">
-        <img src="img-st.png" alt="ST Zirconia" class="product-img">
-        <span class="product-tag">Standard</span>
-        <h3 class="product-name">ST</h3>
-        <p class="product-desc">Classic strength and reliability for everyday restorations.</p>
-        <div class="product-specs">
-          <div class="spec"><strong>Flexural Strength</strong> 800-900 MPa</div>
-          <div class="spec"><strong>Color</strong> White</div>
-        </div>
-        <div class="product-price">€45 <span>per disc</span></div>
-        <a href="#inquiry" class="card-link">Inquire Now</a>
-      </div>
-
-      <!-- Product 2 -->
-      <div class="product-card">
-        <img src="img-sht.png" alt="SHT Zirconia" class="product-img">
-        <span class="product-tag">High Strength</span>
-        <h3 class="product-name">SHT</h3>
-        <p class="product-desc">Enhanced durability for demanding anterior and posterior applications.</p>
-        <div class="product-specs">
-          <div class="spec"><strong>Flexural Strength</strong> 1000+ MPa</div>
-          <div class="spec"><strong>Color</strong> White</div>
-        </div>
-        <div class="product-price">€52 <span>per disc</span></div>
-        <a href="#inquiry" class="card-link">Inquire Now</a>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="product-card">
-        <img src="img-4d-pro.png" alt="4D PRO Zirconia" class="product-img">
-        <span class="product-tag">Advanced</span>
-        <h3 class="product-name">4D PRO</h3>
-        <p class="product-desc">Multi-layered technology with superior translucency and strength.</p>
-        <div class="product-specs">
-          <div class="spec"><strong>Flexural Strength</strong> 850-950 MPa</div>
-          <div class="spec"><strong>Color</strong> Multi-layer</div>
-        </div>
-        <div class="product-price">€68 <span>per disc</span></div>
-        <a href="#inquiry" class="card-link">Inquire Now</a>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="product-card">
-        <img src="img-3d-nature.png" alt="3D Nature Zirconia" class="product-img">
-        <span class="product-tag">Premium</span>
-        <h3 class="product-name">3D Nature</h3>
-        <p class="product-desc">Achieves unprecedented aesthetic integration with natural tooth structure.</p>
-        <div class="product-specs">
-          <div class="spec"><strong>Flexural Strength</strong> 750-850 MPa</div>
-          <div class="spec"><strong>Color</strong> Gradient</div>
-        </div>
-        <div class="product-price">€72 <span>per disc</span></div>
-        <a href="#inquiry" class="card-link">Inquire Now</a>
-      </div>
-
-      <!-- Product 5 -->
-      <div class="product-card">
-        <img src="img-pro-master.png" alt="Pro Master Zirconia" class="product-img">
-        <span class="product-tag">Elite</span>
-        <h3 class="product-name">Pro Master</h3>
-        <p class="product-desc">Engineered for professionals who demand the absolute best.</p>
-        <div class="product-specs">
-          <div class="spec"><strong>Flexural Strength</strong> 950-1050 MPa</div>
-          <div class="spec"><strong>Color</strong> Full Spectrum</div>
-        </div>
-        <div class="product-price">€85 <span>per disc</span></div>
-        <a href="#inquiry" class="card-link">Inquire Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section class="why-section">
-    <div class="section-header">
-      <span class="section-tag">Why Choose Us</span>
-      <h2>Trusted by Laboratories Across Europe</h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <h3>Premium Quality</h3>
-        <p>Yucera-certified discs meeting the highest European dental standards.</p>
-      </div>
-      <div class="why-card">
-        <h3>Fast Delivery</h3>
-        <p>Strategic location in Almaty ensures rapid delivery to all European destinations.</p>
-      </div>
-      <div class="why-card">
-        <h3>Expert Support</h3>
-        <p>Dedicated team ready to assist with technical questions and custom orders.</p>
-      </div>
-      <div class="why-card">
-        <h3>Competitive Pricing</h3>
-        <p>Best value without compromising on quality or reliability.</p>
-      </div>
-      <div class="why-card">
-        <h3>Flexible Orders</h3>
-        <p>Bulk or individual orders tailored to your laboratory needs.</p>
-      </div>
-      <div class="why-card">
-        <h3>Secure Packaging</h3>
-        <p>Protective packaging ensures every disc arrives in perfect condition.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 Zirconia Supply PPK. All rights reserved. | <a href="mailto:zirpapeka@gmail.com">Contact us</a></p>
-  </footer>
+</footer>
 
 </body>
 </html>
