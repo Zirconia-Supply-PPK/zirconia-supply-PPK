@@ -212,8 +212,9 @@
     <a href="products.html">Products</a>
     <a href="about.html">About</a>
     <a href="faq.html">FAQ</a>
+    <a href="faq.html#quiz" style="color:var(--gold-light)!important;">🧩 Smart Quiz</a>
     <a href="contact.html">Contact</a>
-    <a href="contact.html" class="nav-cta">Request Quote</a>
+    <a href="#" onclick="openOrder();return false;" class="nav-cta">Order Now</a>
   </div>
   <div class="nav-bottom">
     <div class="nav-logo">Zirconia <span>Supply</span> PPK</div>
@@ -234,6 +235,32 @@
   <span>Yucera Zirconia · ISO 13485 · CE 1639 · FDA</span>
   <h1>Product Range &amp;<br/>Pricing</h1>
   <p>All discs are 98mm diameter. Prices in EUR per disc. Minimum order: 5 discs. Delivery across Europe.</p>
+</div>
+
+<!-- B2B GUARANTEES BANNER -->
+<div style="background:linear-gradient(135deg,#1a1a1a 0%,#2d2420 100%);padding:2rem 4rem;border-bottom:1px solid rgba(184,154,94,0.3);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:#b89a5e;margin-bottom:1rem;">💎 Our Premium B2B Service Guarantees</div>
+    <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;">
+      <div style="flex:1;min-width:200px;">
+        <div style="font-size:0.85rem;color:white;font-weight:500;margin-bottom:0.3rem;">✈️ All-Inclusive DDP Price</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.5;">DHL/UPS delivery, EU VAT & customs clearance are already included. Zero hidden fees.</div>
+      </div>
+      <div style="flex:1;min-width:200px;">
+        <div style="font-size:0.85rem;color:white;font-weight:500;margin-bottom:0.3rem;">🇪🇺 Full MDR & CE Compliance</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.5;">100% certified fresh factory batches. Completely safe and legal for EU patients.</div>
+      </div>
+      <div style="flex:1;min-width:200px;">
+        <div style="font-size:0.85rem;color:white;font-weight:500;margin-bottom:0.3rem;">🤝 B2B Loyalty Programme</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.5;">Exclusive individual volume discounts unlock automatically from your 3rd order.</div>
+      </div>
+      <div style="flex:1;min-width:200px;background:rgba(184,154,94,0.12);border:1px solid rgba(184,154,94,0.3);padding:0.8rem 1rem;">
+        <div style="font-size:0.85rem;color:#d4b87a;font-weight:600;margin-bottom:0.3rem;">🔥 Welcome Offer</div>
+        <div style="font-size:0.78rem;color:rgba(255,255,255,0.75);line-height:1.5;"><strong style="color:#d4b87a;">−€15 per disc</strong> on your entire first order of 5+ pieces!</div>
+        <a href="#" onclick="openOrder();return false;" style="display:inline-block;margin-top:0.6rem;background:#b89a5e;color:white;padding:0.4rem 1rem;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;">Use My −€15 Discount →</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="filter-bar">
@@ -590,6 +617,32 @@
       b.style.display = tags.includes(tag) ? '' : 'none';
     });
   }
+</script>
+
+<!-- ORDER POPUP -->
+<div id="order-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
+  <div style="background:white;max-width:520px;width:90%;padding:2.5rem;position:relative;max-height:90vh;overflow-y:auto;">
+    <button onclick="closeOrder()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#666;">×</button>
+    <div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#b89a5e;margin-bottom:0.5rem;">Quick Order</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:0.5rem;">Place Your Order</h2>
+    <p style="font-size:0.85rem;color:#666;margin-bottom:1.5rem;">Min. 5 discs · DDP delivery included · First order: −€15/disc</p>
+    <form id="popup-form" onsubmit="submitPopup(event)">
+      <div style="margin-bottom:1rem;"><label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:0.4rem;">Your Name *</label><input name="name" type="text" required placeholder="Jan Kowalski" style="width:100%;padding:0.75rem;border:1px solid #ddd;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;"></div>
+      <div style="margin-bottom:1rem;"><label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:0.4rem;">Laboratory Name & Country *</label><input name="lab" type="text" required placeholder="Lab Dental GmbH, Germany" style="width:100%;padding:0.75rem;border:1px solid #ddd;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;"></div>
+      <div style="margin-bottom:1rem;"><label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:0.4rem;">WhatsApp Number / Email *</label><input name="contact" type="text" required placeholder="+49 123 456 789 or email@lab.com" style="width:100%;padding:0.75rem;border:1px solid #ddd;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;"></div>
+      <div style="margin-bottom:1.5rem;"><label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:0.4rem;">Order Details — Shades & Sizes (min. 5 pcs) *</label><textarea name="order" required placeholder="e.g. 3× ST Multilayer 98×14 A2, 2× 4D PRO 98×16 A3" style="width:100%;padding:0.75rem;border:1px solid #ddd;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;height:100px;resize:vertical;"></textarea></div>
+
+      <button type="submit" id="popup-submit" style="width:100%;padding:1rem;background:#1a1a1a;color:white;border:none;font-family:'DM Sans',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Send Order Request</button>
+      <div id="popup-success" style="display:none;background:#e8f5e8;border:1px solid #4caf50;padding:1rem;margin-top:1rem;text-align:center;font-size:0.9rem;color:#2e7d32;">✓ Order received! We'll contact you within 24 hours.</div>
+      <div style="display:none;"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"/></div>
+    </form>
+  </div>
+</div>
+<script>
+  function openOrder(){const m=document.getElementById('order-modal');m.style.display='flex';document.body.style.overflow='hidden';}
+  function closeOrder(){document.getElementById('order-modal').style.display='none';document.body.style.overflow='';}
+  document.getElementById('order-modal').addEventListener('click',function(e){if(e.target===this)closeOrder();});
+  async function submitPopup(e){e.preventDefault();const btn=document.getElementById('popup-submit');btn.textContent='Sending…';btn.disabled=true;const form=document.getElementById('popup-form');try{const res=await fetch('https://formspree.io/f/mgoqjzng',{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});if(res.ok){document.getElementById('popup-success').style.display='block';btn.textContent='✓ Sent!';form.reset();}else{throw new Error();}}catch{btn.textContent='Send Order Request';btn.disabled=false;alert('Error. Please contact us via WhatsApp: +7 777 356 22 39');}}
 </script>
 </body>
 </html>
