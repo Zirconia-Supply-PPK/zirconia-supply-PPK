@@ -364,8 +364,9 @@
     <a href="products.html">Products</a>
     <a href="about.html">About</a>
     <a href="faq.html">FAQ</a>
+    <a href="faq.html#quiz" style="color:var(--gold-light)!important;">🧩 Smart Quiz</a>
     <a href="contact.html">Contact</a>
-    <a href="contact.html" class="nav-cta">Request Quote</a>
+    <a href="#" onclick="openOrder();return false;" class="nav-cta">Order Now</a>
   </div>
   <div class="nav-bottom">
     <div class="nav-logo">Zirconia <span>Supply</span> PPK</div>
@@ -411,12 +412,15 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag">Yucera Zirconia · EU Delivery</div>
-    <h1>Precision<br/><em>Zirconia</em><br/>for Dental Labs</h1>
-    <p>Premium Yucera zirconia discs delivered across Europe. From translucent multilayers to ultra-strong monolithics — every disc backed by ISO-certified quality.</p>
+    <div class="hero-tag">✈️ DDP Delivery · Zero Customs Fees · CE & MDR Certified</div>
+    <h1>Premium <em>Yucera</em><br/>Zirconia —<br/>Direct to Your Lab</h1>
+    <p>All EU customs duties, import clearance and courier costs are <strong>100% pre-paid by us</strong>. The price you see is the final price at your laboratory door. No hidden fees.</p>
+    <div style="background:rgba(184,154,94,0.12);border-left:3px solid var(--gold);padding:1rem 1.2rem;margin-bottom:1.5rem;border-radius:2px;">
+      <span style="font-size:0.85rem;color:var(--dark);font-weight:500;">🎁 Welcome Offer: <strong style="color:var(--gold);">−€15 per disc</strong> on your entire first order (min. 5 pcs)</span>
+    </div>
     <div class="hero-btns">
-      <a href="products.html" class="btn-primary">View All Products</a>
-      <a href="contact.html" class="btn-outline">Get a Quote</a>
+      <a href="faq.html#quiz" class="btn-primary">🧩 Take Smart Selection Quiz</a>
+      <a href="products.html" class="btn-outline">View Products & Pricing</a>
     </div>
   </div>
 </section>
@@ -551,37 +555,37 @@
 <!-- WHY US -->
 <section class="why-section">
   <div class="section-tag">Why Choose Us</div>
-  <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:white; margin-top:0.5rem;">Built for Dental Professionals</h2>
+  <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:white; margin-top:0.5rem;">Our Premium B2B Guarantees</h2>
   <div class="why-grid">
     <div class="why-card">
-      <div class="why-icon">🏅</div>
-      <h3>Yucera Products</h3>
-      <p>We supply Yucera discs — ISO 13485, CE 1639, and FDA registered products. Consistent quality, every order.</p>
+      <div class="why-icon">✈️</div>
+      <h3>DDP Air Freight Delivery</h3>
+      <p>Fast shipping via DHL/UPS straight to your lab door. You don't pay a single euro for customs, VAT, or courier processing. All included.</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">🚚</div>
-      <h3>Europe-Wide Delivery</h3>
-      <p>Reliable shipping to all EU countries. Flexible logistics with tracking provided on every shipment.</p>
+      <div class="why-icon">🇪🇺</div>
+      <h3>Full MDR & CE Compliance</h3>
+      <p>Our zirconia is certified under the latest European Medical Device Regulation. 100% safe and legal for EU patients — no legal risks for your lab.</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">📦</div>
-      <h3>Low Minimum Order</h3>
-      <p>Order from just 5 discs. No huge upfront commitment — perfect for small labs and large operations alike.</p>
+      <div class="why-icon">🏭</div>
+      <h3>Direct-from-Factory Freshness</h3>
+      <p>No old transit stocks. You receive original, newly manufactured Yucera batches with maximum material stability and shelf life.</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">💬</div>
-      <h3>Personal Service</h3>
-      <p>Direct contact via WhatsApp or email. Quick responses, flexible payment terms negotiated individually.</p>
+      <div class="why-icon">🎁</div>
+      <h3>Welcome −€15 per Disc</h3>
+      <p>Risk-free trial offer: get €15 off every single disc on your first order of 5+ pieces. Test our quality with zero financial risk.</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">🔬</div>
-      <h3>Full Spec Transparency</h3>
-      <p>Every product listed with exact MPa strength, transmittance %, sintering temp, and density specs.</p>
+      <div class="why-icon">🤝</div>
+      <h3>B2B Loyalty Pricing</h3>
+      <p>We grow with your business. Exclusive individual volume discounts unlock automatically starting from your 3rd order.</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">💎</div>
-      <h3>7 Product Lines</h3>
-      <p>From entry-level white monolithics to premium 4D multilayers — one supplier for your entire lab.</p>
+      <div class="why-icon">📞</div>
+      <h3>EU Business Hours Support</h3>
+      <p>Active feedback and assistance throughout the entire working day via WhatsApp or email. Real person, fast responses.</p>
     </div>
   </div>
 </section>
@@ -628,6 +632,74 @@
     <a href="contact.html">Contact</a>
   </nav>
 </footer>
+
+<!-- ORDER POPUP -->
+<div id="order-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
+  <div style="background:white;max-width:520px;width:90%;padding:2.5rem;position:relative;max-height:90vh;overflow-y:auto;">
+    <button onclick="closeOrder()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#666;">×</button>
+    <div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#b89a5e;margin-bottom:0.5rem;">Quick Order</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:0.5rem;">Place Your Order</h2>
+    <p style="font-size:0.85rem;color:#666;margin-bottom:1.5rem;">Min. 5 discs · DDP delivery included · First order: −€15/disc</p>
+    <form id="popup-form" onsubmit="submitPopup(event)">
+      <div style="margin-bottom:1rem;">
+        <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:0.4rem;">Your Name *</label>
+        <input name="name" type="text" required placeholder="Jan Kowalski" style="width:100%;padding:0.75rem;border:1px solid #ddd;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;">
+      </div>
+      <div style="margin-bottom:1rem;">
+        <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:0.4rem;">Laboratory Name & Country *</label>
+        <input name="lab" type="text" required placeholder="Lab Dental GmbH, Germany" style="width:100%;padding:0.75rem;border:1px solid #ddd;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;">
+      </div>
+      <div style="margin-bottom:1rem;">
+        <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:0.4rem;">WhatsApp Number / Email *</label>
+        <input name="contact" type="text" required placeholder="+49 123 456 789 or email@lab.com" style="width:100%;padding:0.75rem;border:1px solid #ddd;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;">
+      </div>
+      <div style="margin-bottom:1.5rem;">
+        <label style="display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#666;margin-bottom:0.4rem;">Order Details — Shades & Sizes (min. 5 pcs) *</label>
+        <textarea name="order" required placeholder="e.g. 3× ST Multilayer 98×14 A2, 2× 4D PRO 98×16 A3" style="width:100%;padding:0.75rem;border:1px solid #ddd;font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;height:100px;resize:vertical;"></textarea>
+      </div>
+      <div style="background:#f8f4ef;border-left:3px solid #b89a5e;padding:0.8rem 1rem;margin-bottom:1.2rem;font-size:0.82rem;color:#3d3530;">
+      <button type="submit" id="popup-submit" style="width:100%;padding:1rem;background:#1a1a1a;color:white;border:none;font-family:'DM Sans',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:background 0.3s;">Send Order Request</button>
+      <div id="popup-success" style="display:none;background:#e8f5e8;border:1px solid #4caf50;padding:1rem;margin-top:1rem;text-align:center;font-size:0.9rem;color:#2e7d32;">✓ Order received! We'll contact you within 24 hours.</div>
+      <!-- Honeypot -->
+      <div style="display:none;"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"/></div>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openOrder() {
+    const m = document.getElementById('order-modal');
+    m.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeOrder() {
+    document.getElementById('order-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.getElementById('order-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeOrder();
+  });
+  async function submitPopup(e) {
+    e.preventDefault();
+    const btn = document.getElementById('popup-submit');
+    btn.textContent = 'Sending…'; btn.disabled = true;
+    const form = document.getElementById('popup-form');
+    try {
+      const res = await fetch('https://formspree.io/f/mgoqjzng', {
+        method: 'POST', body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('popup-success').style.display = 'block';
+        btn.textContent = '✓ Sent!';
+        form.reset();
+      } else { throw new Error(); }
+    } catch {
+      btn.textContent = 'Send Order Request'; btn.disabled = false;
+      alert('Error. Please contact us via WhatsApp: +7 777 356 22 39');
+    }
+  }
+</script>
 
 </body>
 </html>
